@@ -146,11 +146,11 @@
     "url": "git+https://github.com/siteboon/claudecodeui.git"
   },
   "scripts": {
-    "build": "node init && npm run build:client && npm run build:server",
-    "build:client": "node init && vite build",
-    "build:server": "node init && tsc -p server/tsconfig.json && tsc-alias -p server/tsconfig.json",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build",
+    "build:server": "tsc -p server/tsconfig.json && tsc-alias -p server/tsconfig.json",
     "client": "vite",
-    "dev": "node init && concurrently --kill-others \"npm run server:dev\" \"npm run client\"",
+    "dev": "concurrently --kill-others \"npm run server:dev\" \"npm run client\"",
     "lint": "eslint src/ server/",
     "lint:fix": "eslint src/ server/ --fix",
     "postinstall": "node scripts/fix-node-pty.js",
@@ -162,7 +162,7 @@
     "server": "node dist-server/server/index.js",
     "server:dev": "tsx --tsconfig server/tsconfig.json server/index.js",
     "server:dev-watch": "tsx watch --tsconfig server/tsconfig.json server/index.js",
-    "start": "node init && npm run build && npm run server",
+    "start": "npm run build && npm run server",
     "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p server/tsconfig.json",
     "update:platform": "./update-platform.sh"
   },

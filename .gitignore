@@ -138,3 +138,4 @@ tasks/
 # Git worktrees
 .worktrees/
 config.bat
+.env
